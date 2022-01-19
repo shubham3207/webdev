@@ -22,13 +22,15 @@
 
 </head>
 
-<body>
+<body >
+      
     
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" style="font-size: larger; ">
         <a href="/"><img class="navbar-brand" src="{% static 'img/Logos/Trial4Logo.jpg' %}" height="50"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -39,11 +41,17 @@
 
         </div>
     </nav>
+      
+    
+    
 
     <h1 class="display-3" style="text-align: center; color: coral;"><b>Login</b></h1>
 
     {%if Message%}
     <div class="container" >
+        
+        
+        <!-- <img src ="{%static 'img/Logos/Trial4Logo.jpg' %}"> -->
         <div class="alert alert-danger alert-dismissible fade show my-2" role="alert">
             <strong>{{Message}}!!</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -52,17 +60,20 @@
         </div>
     </div>
     {%endif%}
+    
+    
 
-    <div class="container my-5 p-3 lead" id="signin" width="20"  style="background-color:slategray; opacity: 0.8px;">
+    <div class="container my-5 p-3 lead w-50 h-75" id="signin"   style="background-color:hsla(hue, saturation, lightness, alpha); ">
+        
         <form action="/LoginAuthentication/" class="px-4 py-3" method="POST">
             {%csrf_token%}
             <div class="form-group">
                 <label for="exampleDropdownFormEmail1"><b>Email address</b></label>
-                <input type="email" class="form-control" name="login_email" id="exampleDropdownFormEmail1" placeholder="email@example.com" autocomplete="off" required>
+                <input type="email" class="form-control" name="login_email" id="exampleDropdownFormEmail1" placeholder="email@example.com" autocomplete="off" required style="width: 450px ;">
             </div>
             <div class="form-group">
                 <label for="exampleDropdownFormPassword1"><b>Password</b></label>
-                <input type="password" class="form-control" name="login_password" id="exampleDropdownFormPassword1" placeholder="Password" required>
+                <input type="password" class="form-control" name="login_password" id="exampleDropdownFormPassword1" placeholder="Password" required style="width: 450px;">
             </div>
             <input type="submit" class="btn btn-primary" value="Login" name="Login" />
         </form>
@@ -74,6 +85,8 @@
             <a href="#"><b>Forgot password?</b></a>
         </div>
     </div>
+    </div>
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

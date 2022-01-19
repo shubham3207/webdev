@@ -1,14 +1,16 @@
+from urllib import request
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 from CustomerHome.models import Customer
 from Owner.models import Owner
 from Manager.models import Manager
-from Vehicles.models import Vehicle
+from vehicle.models import Vehicle
 from RentVehicle.models import RentVehicle
 
 from datetime import datetime
 from datetime import date
+from django.core.paginator import Paginator
 
 isLogin = False
 isLogout = False
@@ -20,6 +22,7 @@ def index(request):
 
     if('user_email' in request.session):
         email = request.session.get('user_email')
+        
 
         result_customer = Customer.objects.filter(customer_email=email)
         result_owner = Owner.objects.filter(Owner_email=email)
@@ -218,3 +221,15 @@ def contact_us(request):
 
 def search(request):
     return HttpResponse('search')
+
+def allproduct(request):
+
+ vehicle_vehicle= Vehicle.objects.all()
+
+ paginator = Paginator(Vehicle, 6)
+
+ page = request.GET.get('page')
+
+ paged_product = paginator.get_page(page)
+
+ return render(request, 'Vehicle/Home.html', {'Vehicle':paged_product})

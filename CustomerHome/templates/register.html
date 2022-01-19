@@ -22,28 +22,36 @@
 
 </head>
 
-<body>
+<body style="background-size: 100% 100%;
+background-position: 0px 0px;
+background-image: linear-gradient(90deg, #E2C1E2FF 0%, #71C4FFFF 100%);" >
+    
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" style="font-size:larger; color: slategrey;">
         <a href="/"><img class="navbar-brand" src="{% static 'img/Logos/Trial4Logo.jpg' %}" height="50"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="/" style=" color: #f1f1f1; ">Home</a>
                 </li>
+                
             </ul>
+            
 
         </div>
     </nav>
+    
+    
 
     <h1 class="display-3" style="text-align: center;">Register</h1>
 
     {%if Message%}
     <div class="container">
-        <div class="alert alert-warning alert-dismissible fade show my-2" role="alert">
+        <div class="alert alert-warning alert-dismissible fade show my-2 " role="alert">
             <strong>{{Message}}!!</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -52,7 +60,9 @@
     </div>
     {%endif%}
 
-    <div class="container my-5 p-3 lead" id="signin">
+    <div class="container my-5 p-3 lead my-5 p-3 lead w-50 h-75" id="signin" style="background-size: 100% 100%;
+    background-position: 0px 0px;
+    background-image: linear-gradient(90deg, #F4ECF8FF 0%, #71C4FFFF 100%);">
         <form action="/RegisterCustomer/" class="px-4 py-3" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group">

@@ -35,7 +35,8 @@ INSTALLED_APPS = [
     'Owner.apps.OwnerConfig',
     'Manager.apps.ManagerConfig',
     'RentVehicle.apps.RentvehicleConfig',
-    'Vehicles.apps.VehiclesConfig',
+    'vehicle.apps.VehicleConfig',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -81,7 +82,7 @@ WSGI_APPLICATION = 'VehicleRentingSystem.wsgi.application'
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'carbike',
+        'NAME': 'rent',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
